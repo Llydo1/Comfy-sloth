@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Product from "./MultiplePage/Product";
+import Product from "../MultiplePage/Product";
 
 const GridView = ({ products }) => {
   return (

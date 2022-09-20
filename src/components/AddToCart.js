@@ -7,7 +7,8 @@ import AmountButtons from "./MultiplePage/AmountButtons";
 
 const AddToCart = ({ product }) => {
   const { id, stock, colors } = product;
-  console.log(stock);
+  const { addToCart } = useCartContext();
+
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -34,7 +35,11 @@ const AddToCart = ({ product }) => {
       </div>
       <div className="btn-container">
         <AmountButtons amount={amount} stock={stock} setAmount={setAmount} />
-        <Link to="/cart" className="btn">
+        <Link
+          to="/cart"
+          className="btn"
+          onClick={() => addToCart(id, amount, currentColor, product)}
+        >
           add to cart
         </Link>
       </div>
