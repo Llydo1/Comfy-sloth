@@ -29,6 +29,7 @@ const Nav = () => {
 };
 
 const NavLink = () => {
+  const { myUser } = useUserContext();
   return (
     <ul className="nav-links">
       {links.map((single) => {
@@ -38,9 +39,7 @@ const NavLink = () => {
           </li>
         );
       })}
-      <li>
-        <Link to="/checkout">checkout</Link>
-      </li>
+      <li>{myUser && <Link to="/checkout">checkout</Link>}</li>
     </ul>
   );
 };

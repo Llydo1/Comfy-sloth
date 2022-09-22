@@ -62,7 +62,6 @@ export const ProductsProvider = ({ children }) => {
   };
   useEffect(() => {
     fetchProducts(url);
-    console.log("Products_reducer invoke");
   }, []);
 
   return (

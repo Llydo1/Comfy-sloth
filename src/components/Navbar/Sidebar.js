@@ -27,6 +27,7 @@ const Sidebar = () => {
 };
 
 const SidebarLink = () => {
+  const { myUser } = useUserContext();
   const { closeSidebar } = useProductsContext();
   return (
     <ul className="links">
@@ -39,11 +40,13 @@ const SidebarLink = () => {
           </li>
         );
       })}
-      <li>
-        <Link to="/checkout" onClick={closeSidebar}>
-          checkout
-        </Link>
-      </li>
+      {myUser && (
+        <li>
+          <Link to="/checkout" onClick={closeSidebar}>
+            checkout
+          </Link>
+        </li>
+      )}
     </ul>
   );
 };

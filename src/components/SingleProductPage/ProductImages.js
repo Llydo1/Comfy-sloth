@@ -8,13 +8,14 @@ const ProductImages = ({ images = [{ url: "" }] }) => {
     <Wrapper>
       <img src={images[currentImage].url} alt="" className="main" />
       <div className="gallery">
-        {images.map(({ id, url }, index) => {
+        {images.map(({ url }, index) => {
           return (
             <img
-              key={id}
+              key={index}
               src={url}
               className={currentImage === index ? "active" : ""}
               onClick={() => setCurrentImage(index)}
+              alt=""
             />
           );
         })}

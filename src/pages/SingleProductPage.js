@@ -28,10 +28,12 @@ const SingleProductPage = () => {
   //UseEffect hooks
   useEffect(() => {
     fetchSingleProduct(url + id);
+    // eslint-disable-next-line
   }, [id]);
 
   useEffect(() => {
     error && setTimeout(() => history.push("/"), 3000);
+    // eslint-disable-next-line
   }, [error]);
 
   //Component return

@@ -52,7 +52,9 @@ const Filters = () => {
                     value={single}
                     type="button"
                     name="category"
-                    className={category === single.toLowerCase() && "active"}
+                    className={`${
+                      category === single.toLowerCase() ? "active" : ""
+                    }`}
                   >
                     {single}
                   </button>
@@ -94,7 +96,9 @@ const Filters = () => {
                       name="color"
                       style={{ background: single }}
                       value={single}
-                      className={"all-btn " + (color === single && "active")}
+                      className={
+                        "all-btn " + (color === single ? "active" : "")
+                      }
                       onClick={updateFilters}
                     >
                       All
@@ -106,7 +110,9 @@ const Filters = () => {
                     name="color"
                     style={{ background: single }}
                     value={single}
-                    className={"color-btn " + (color === single && "active")}
+                    className={
+                      "color-btn " + (color === single ? "active" : "")
+                    }
                     onClick={updateFilters}
                   >
                     {color === single && <FaCheck />}

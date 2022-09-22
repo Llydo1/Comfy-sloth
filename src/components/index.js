@@ -16,6 +16,7 @@ import Sort from "./ProductsPage/Sort";
 import Stars from "./SingleProductPage/Stars";
 import CartContent from "./CarContent";
 import PageHero from "./MultiplePage/PageHero";
+import StripeCheckout from "./StripeCheckout";
 
 export {
   FeaturedProducts,
@@ -36,4 +37,5 @@ export {
   Stars,
   CartContent,
   PageHero,
+  StripeCheckout,
 };

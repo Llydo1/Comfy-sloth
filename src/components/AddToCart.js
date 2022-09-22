@@ -12,6 +12,12 @@ const AddToCart = ({ product }) => {
   const [currentColor, setCurrentColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
+  const toggleAmount = (value) => {
+    setAmount((prev) => {
+      return prev + value;
+    });
+  };
+
   return (
     <Wrapper>
       <div className="colors">
@@ -22,19 +28,19 @@ const AddToCart = ({ product }) => {
               <button
                 key={index}
                 className={
-                  currentColor == color ? "color-btn active" : "color-btn"
+                  currentColor === color ? "color-btn active" : "color-btn"
                 }
                 style={{ backgroundColor: color }}
                 onClick={() => setCurrentColor(colors[index])}
               >
-                {currentColor == color ? <FaCheck /> : ""}
+                {currentColor === color ? <FaCheck /> : ""}
               </button>
             );
           })}
         </div>
       </div>
       <div className="btn-container">
-        <AmountButtons amount={amount} stock={stock} setAmount={setAmount} />
+        <AmountButtons amount={amount} stock={stock} setAmount={toggleAmount} />
         <Link
           to="/cart"
           className="btn"

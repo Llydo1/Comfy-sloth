@@ -32,7 +32,6 @@ const filter_reducer = (state, action) => {
 
     case SORT_PRODUCTS:
       const { filtered_products } = state;
-      console.log(state.sort);
       switch (state.sort) {
         case "price-lowest":
           filtered_products.sort((a, b) => a.price - b.price);

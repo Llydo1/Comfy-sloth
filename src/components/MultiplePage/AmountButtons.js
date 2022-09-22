@@ -8,7 +8,7 @@ const AmountButtons = ({ amount, stock, setAmount }) => {
       <button
         type="button"
         className="amount-btn"
-        onClick={() => amount > 1 && setAmount(amount - 1)}
+        onClick={() => amount > 1 && setAmount(-1)}
       >
         <FaMinus />
       </button>
@@ -16,7 +16,7 @@ const AmountButtons = ({ amount, stock, setAmount }) => {
       <button
         type="button"
         className="amount-btn"
-        onClick={() => amount < stock && setAmount(amount + 1)}
+        onClick={() => amount < stock && setAmount(1)}
       >
         <FaPlus />
       </button>
